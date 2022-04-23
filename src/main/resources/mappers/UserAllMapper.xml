@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.cwsya.tadmin.mapper.UserAllMapper">
+    
+    <resultMap id="UserAll" type="org.cwsya.tadmin.pojo.PO.UserAllEntity">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <collection property="role" javaType="List" column="role" ofType="String">
+            <result property="role" column="role"></result>
+        </collection>
+        <collection property="access" javaType="List" column="access" ofType="String">
+            <result property="access" column="access"></result>
+        </collection>
+    </resultMap>
+    
+    <select id="selectUserAll" resultMap="UserAll">
+        SELECT
+            u.id AS id,
+            u.user_name AS name,
+            r.name AS role,
+            a.name AS access
+        FROM
+            USER AS u
+                LEFT JOIN user_role AS ur ON u.id = ur.uid
+                LEFT JOIN role AS r ON ur.rid = r.id
+                LEFT JOIN role_access AS ra ON r.id = ra.rid
+                LEFT JOIN access AS a ON ra.aid = a.id
+        WHERE
+            u.user_name = #{userName}
+          AND u.pass_word = #{passWord}
+    </select>
+</mapper>
