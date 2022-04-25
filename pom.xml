@@ -45,13 +45,6 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
         </dependency>
-        <!-- Sa-Token插件：权限缓存与业务缓存分离 -->
-        <dependency>
-            <groupId>cn.dev33</groupId>
-            <artifactId>sa-token-alone-redis</artifactId>
-            <version>1.29.0</version>
-        </dependency>
-
 <!--        数据库方面-->
         <dependency>
             <groupId>com.baomidou</groupId>

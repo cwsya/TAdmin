@@ -1,12 +1,17 @@
 package org.cwsya.tadmin.pojo.PO;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import org.apache.ibatis.javassist.bytecode.stackmap.TypeData;
+
 import java.io.Serializable;
 import java.util.List;
+
 
 /**
  * @author cws
  * 用户名 角色以及权限
  */
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS)
 public class UserAllEntity implements Serializable {
     private Integer id;
     private String name;

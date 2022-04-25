@@ -1,5 +1,7 @@
 package org.cwsya.tadmin.pojo.PO;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -7,11 +9,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 
- * 
- * @author chenshun
- * @email sunlightcs@gmail.com
- * @date 2022-04-22 21:17:27
+ * @author cws
+ * 实体类
  */
 @TableName("user")
 public class UserEntity implements Serializable {
@@ -34,13 +33,16 @@ public class UserEntity implements Serializable {
 	 * 用户状态
 	 */
 	private Integer status;
+
 	/**
 	 * 更新时间
 	 */
+	@TableField(fill = FieldFill.INSERT_UPDATE)
 	private Date updatedTime;
 	/**
 	 * 创建时间
 	 */
+	@TableField(fill = FieldFill.INSERT)
 	private Date createdTime;
 
 	@Override

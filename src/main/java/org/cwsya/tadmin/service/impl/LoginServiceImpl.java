@@ -1,12 +1,15 @@
 package org.cwsya.tadmin.service.impl;
 
 import cn.dev33.satoken.stp.StpUtil;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.cwsya.tadmin.exception.UserErrorException;
 import org.cwsya.tadmin.mapper.UserAllMapper;
 import org.cwsya.tadmin.pojo.PO.UserAllEntity;
 import org.cwsya.tadmin.pojo.VO.UserEntity;
 import org.cwsya.tadmin.service.LoginService;
+import org.cwsya.tadmin.util.ObjectMapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,26 +21,22 @@ public class LoginServiceImpl implements LoginService {
 
     @Autowired
     private UserAllMapper userAllMapper;
+
+    @Autowired
+    private RedisTemplate<String,String> redisTemplate;
     @Override
-    public UserAllEntity login(UserEntity user) throws UserErrorException {
+    public UserAllEntity login(UserEntity user) throws UserErrorException, JsonProcessingException {
         UserAllEntity userAllEntity = userAllMapper.selectUserAll(user);
         if (userAllEntity==null) {
             throw new UserErrorException();
         }
         StpUtil.login(userAllEntity.getId());
-
+        redisTemplate.opsForValue().set("token:login:user:"+userAllEntity.getId(), ObjectMapperUtil.getIntstance().writeValueAsString(userAllEntity));
         return userAllEntity;
     }
 
     @Override
     public boolean isLogin() {
         return StpUtil.isLogin();
-    }
-    private void setRole(UserAllEntity userAllEntity){
-
-
-    }
-    private void setAccess(UserAllEntity userAllEntity){
-
     }
 }

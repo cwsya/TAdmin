@@ -4,10 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9c6cebe-0e92-490b-b895-e9fea6f4a1fd" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="a9c6cebe-0e92-490b-b895-e9fea6f4a1fd" name="变更" comment="MyBatisPlus&#10;自定添加时间&#10;分页&#10;主键策略&#10;Sa-Token&#10;异常处理&#10;跨域问题">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/MyCorsFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/MyMetaObjectHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/handling/SaTokenExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/util/ObjectMapperUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/SaTokenConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/SaTokenConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/handling/HttpExceptionHandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/handling/HttpExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/handling/LoginExceptionHandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/handling/LoginExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/PO/UserAllEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/PO/UserAllEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/PO/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/PO/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/ResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/ResultCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/cwsya/tadmin/TAdminApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/cwsya/tadmin/TAdminApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,20 +51,25 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "E:/code/java/idea/TAdmin/src/main/java/org/cwsya/tadmin/pojo/PO"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/code/java/idea/TAdmin/src/main/java/org/cwsya/tadmin/pojo/PO&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;59482655b1cef8fa6510142f59a7d334&quot;
   }
-}]]></component>
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
@@ -55,7 +78,7 @@
       <recent name="E:\code\java\idea\TAdmin\src\main\java\org\cwsya\tadmin\pojo\PO" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.TAdminApplication">
+  <component name="RunManager" selected="JUnit.TAdminApplicationTests.contextLoads">
     <configuration name="TAdminApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TAdmin" />
       <extension name="coverage">
@@ -93,8 +116,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650523753621</updated>
-      <workItem from="1650523755210" duration="40153000" />
+      <workItem from="1650523755210" duration="47004000" />
+      <workItem from="1650785957276" duration="75000" />
+      <workItem from="1650786045142" duration="15643000" />
     </task>
+    <task id="LOCAL-00001" summary="123">
+      <created>1650729737231</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650729737231</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,5 +140,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="123" />
+    <MESSAGE value="MyBatisPlus&#10;自定添加时间&#10;分页&#10;主键策略&#10;Sa-Token&#10;异常处理&#10;跨域问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="MyBatisPlus&#10;自定添加时间&#10;分页&#10;主键策略&#10;Sa-Token&#10;异常处理&#10;跨域问题" />
   </component>
 </project>
