@@ -38,8 +38,8 @@ class TAdminApplicationTests {
 //        userEntityPage.setSize(1).setSize(2);
 //        userMapper.selectPage(userEntityPage,null);
 //        System.out.println(userEntityPage.getRecords());
-        userMapper.insert(new UserEntity(null,"cws","cws",null,null,null));
-
+//        userMapper.insert(new UserEntity(null,"cws","cws",null,null,null));
+        userMapper.insert(new UserEntity(null,"1","1",null,null,null));
 
     }
 

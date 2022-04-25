@@ -4,26 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9c6cebe-0e92-490b-b895-e9fea6f4a1fd" name="变更" comment="MyBatisPlus&#10;自定添加时间&#10;分页&#10;主键策略&#10;Sa-Token&#10;异常处理&#10;跨域问题">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/MyCorsFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/MyMetaObjectHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/MybatisPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/handling/SaTokenExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/util/ObjectMapperUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="a9c6cebe-0e92-490b-b895-e9fea6f4a1fd" name="变更" comment="添加:&#10;用户的增改查与修改用户状态">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/ParameterException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/SaTokenConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/SaTokenConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/handling/HttpExceptionHandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/handling/HttpExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/handling/LoginExceptionHandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/handling/LoginExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/PO/UserAllEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/PO/UserAllEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/PO/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/PO/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/ResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/ResultCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/handling/HttpExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/exception/handling/HttpExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/cwsya/tadmin/TAdminApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/cwsya/tadmin/TAdminApplicationTests.java" afterDir="false" />
     </list>
@@ -31,6 +18,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -42,6 +32,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JRebelWorkspace">
+    <option name="jrebelEnabledAutocompile" value="true" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -63,7 +56,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
     &quot;last_opened_file_path&quot;: &quot;E:/code/java/idea/TAdmin/src/main/java/org/cwsya/tadmin/pojo/PO&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;59482655b1cef8fa6510142f59a7d334&quot;
   }
 }</component>
@@ -78,7 +71,7 @@
       <recent name="E:\code\java\idea\TAdmin\src\main\java\org\cwsya\tadmin\pojo\PO" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TAdminApplicationTests.contextLoads">
+  <component name="RunManager" selected="Spring Boot.TAdminApplication">
     <configuration name="TAdminApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TAdmin" />
       <extension name="coverage">
@@ -118,7 +111,9 @@
       <updated>1650523753621</updated>
       <workItem from="1650523755210" duration="47004000" />
       <workItem from="1650785957276" duration="75000" />
-      <workItem from="1650786045142" duration="15643000" />
+      <workItem from="1650786045142" duration="38376000" />
+      <workItem from="1650888453458" duration="34000" />
+      <workItem from="1650888527768" duration="107000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1650729737231</created>
@@ -127,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650729737231</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="MyBatisPlus&#10;自定添加时间&#10;分页&#10;主键策略&#10;Sa-Token&#10;异常处理&#10;跨域问题">
+      <created>1650851806601</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650851806601</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +146,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="123" />
     <MESSAGE value="MyBatisPlus&#10;自定添加时间&#10;分页&#10;主键策略&#10;Sa-Token&#10;异常处理&#10;跨域问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="MyBatisPlus&#10;自定添加时间&#10;分页&#10;主键策略&#10;Sa-Token&#10;异常处理&#10;跨域问题" />
+    <MESSAGE value="添加:&#10;用户的增改查与修改用户状态" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加:&#10;用户的增改查与修改用户状态" />
   </component>
 </project>
