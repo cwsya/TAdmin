@@ -56,7 +56,8 @@ public class UserController {
     }
     @SaCheckRole("admin")
     @PostMapping("/stopUser")
-    public Result<?> stopUser(@RequestBody Integer id) throws ParameterException {
+    public Result<?> stopUser(@RequestBody JSONObject jsonObject) throws ParameterException {
+        int id = jsonObject.getInt("id");
         if (StrUtil.isBlankIfStr(id)){
             throw new ParameterException();
         }
@@ -65,7 +66,8 @@ public class UserController {
     }
     @SaCheckRole("admin")
     @PostMapping("/startUser")
-    public Result<?> startUser(@RequestBody Integer id) throws ParameterException {
+    public Result<?> startUser(@RequestBody JSONObject jsonObject) throws ParameterException {
+        int id = jsonObject.getInt("id");
         if (StrUtil.isBlankIfStr(id)){
             throw new ParameterException();
         }
