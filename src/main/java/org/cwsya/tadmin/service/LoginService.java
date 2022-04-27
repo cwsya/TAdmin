@@ -23,4 +23,5 @@ public interface LoginService {
      * @return 是否登录
      */
     boolean isLogin();
+    boolean outLogin(String token);
 }

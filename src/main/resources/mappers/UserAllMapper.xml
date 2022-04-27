@@ -5,13 +5,13 @@
 <mapper namespace="org.cwsya.tadmin.mapper.UserAllMapper">
     
     <resultMap id="UserAll" type="org.cwsya.tadmin.pojo.PO.UserAllEntity">
-        <id property="id" column="id"></id>
-        <result property="name" column="name"></result>
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
         <collection property="role" javaType="List" column="role" ofType="String">
-            <result property="role" column="role"></result>
+            <result property="role" column="role"/>
         </collection>
         <collection property="access" javaType="List" column="access" ofType="String">
-            <result property="access" column="access"></result>
+            <result property="access" column="access"/>
         </collection>
     </resultMap>
     

@@ -1,6 +1,7 @@
 package org.cwsya.tadmin.service.impl;
 
 import cn.dev33.satoken.stp.StpUtil;
+import cn.hutool.core.util.StrUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.cwsya.tadmin.exception.UserErrorException;
 import org.cwsya.tadmin.mapper.UserAllMapper;
@@ -38,5 +39,15 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public boolean isLogin() {
         return StpUtil.isLogin();
+    }
+
+    @Override
+    public boolean outLogin(String token) {
+        Object id = StpUtil.getLoginIdByToken(token);
+        StpUtil.logoutByTokenValue(token);
+        if (!StrUtil.isBlankIfStr(id)) {
+            redisTemplate.delete("token:login:user:"+id);
+        }
+        return true;
     }
 }

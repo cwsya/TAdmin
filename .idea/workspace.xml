@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9c6cebe-0e92-490b-b895-e9fea6f4a1fd" name="变更" comment="添加:&#10;用户的增改查与修改用户状态">
+    <list default="true" id="a9c6cebe-0e92-490b-b895-e9fea6f4a1fd" name="变更" comment="亿点bug">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_6_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/config/extend/SaTokenRedisExtend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cn_dev33_sa_token_alone_redis_1_29_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TAdmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TAdmin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/TAdminApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/TAdminApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/UserAllMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserAllMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,22 +48,30 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/code/java/idea/TAdmin/src/main/java/org/cwsya/tadmin/pojo/PO&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;59482655b1cef8fa6510142f59a7d334&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "E:/code/java/idea/TAdmin/src/main/java/org/cwsya/tadmin/pojo/PO",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.449862",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "59482655b1cef8fa6510142f59a7d334"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -107,7 +125,9 @@
       <workItem from="1650785957276" duration="75000" />
       <workItem from="1650786045142" duration="38376000" />
       <workItem from="1650888453458" duration="34000" />
-      <workItem from="1650888527768" duration="1384000" />
+      <workItem from="1650888527768" duration="8922000" />
+      <workItem from="1650981599710" duration="3413000" />
+      <workItem from="1651022753212" duration="3907000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1650729737231</created>
@@ -130,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650888645226</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="亿点bug">
+      <created>1650938132303</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1650938132303</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +175,7 @@
     <MESSAGE value="123" />
     <MESSAGE value="MyBatisPlus&#10;自定添加时间&#10;分页&#10;主键策略&#10;Sa-Token&#10;异常处理&#10;跨域问题" />
     <MESSAGE value="添加:&#10;用户的增改查与修改用户状态" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加:&#10;用户的增改查与修改用户状态" />
+    <MESSAGE value="亿点bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="亿点bug" />
   </component>
 </project>
