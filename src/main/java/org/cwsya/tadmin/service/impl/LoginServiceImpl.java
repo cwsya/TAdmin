@@ -6,7 +6,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import org.cwsya.tadmin.exception.UserErrorException;
 import org.cwsya.tadmin.mapper.UserAllMapper;
 import org.cwsya.tadmin.pojo.PO.UserAllEntity;
-import org.cwsya.tadmin.pojo.VO.UserEntity;
+import org.cwsya.tadmin.pojo.PO.UserEntity;
 import org.cwsya.tadmin.service.LoginService;
 import org.cwsya.tadmin.util.ObjectMapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;

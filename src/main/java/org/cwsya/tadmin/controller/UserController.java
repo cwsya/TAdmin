@@ -25,35 +25,50 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /**
+     * 注册用户
+     * @param jsonObject 前端传来得数据 userName--用户名, passWord--密码
+     * @return 统一返回值
+     * @throws ParameterException 参数异常
+     */
     @SaCheckRole("admin")
     @PostMapping("/addUser")
-    public Result<?> addUser(@RequestBody UserEntity user) throws ParameterException {
-        if (StrUtil.isBlankIfStr(user.getUserName())||StrUtil.isBlankIfStr(user.getPassWord())){
+    public Result<?> addUser(@RequestBody JSONObject jsonObject) throws ParameterException {
+        String userName =jsonObject.getStr("userName");
+        String passWord = jsonObject.getStr("passWord");
+        if (StrUtil.isBlankIfStr(userName)||StrUtil.isBlankIfStr(passWord)){
             throw new ParameterException();
         }
-        user.setId(null);
-        user.setStatus(null);
-        user.setUpdatedTime(null);
-        user.setCreatedTime(null);
-        boolean b = userService.addUser(user);
         ResultCodeEnum codeEnum = ResultCodeEnum.SUCCESS;
-
-        return new Result<>(codeEnum.getResultCode(),codeEnum.getMessage(), b);
+        return new Result<>(codeEnum.getResultCode(),codeEnum.getMessage(), userService.addUser(new UserEntity(null,userName,passWord,null,null,null)));
     }
 
+    /**
+     * 修改账号密码
+     * @param jsonObject 统一数据接受 id--用户id, passWord--要更改的密码
+     * @return 统一返回值
+     * @throws ParameterException 参数异常
+     */
     @SaCheckRole("admin")
-    @PostMapping("/upUser")
-    public Result<?> upUser(@RequestBody UserEntity user) throws ParameterException {
-        if (StrUtil.isBlankIfStr(user.getId())||StrUtil.isBlankIfStr(user.getPassWord())){
+    @PostMapping("/upUserPassword")
+    public Result<?> upUserPassword(@RequestBody JSONObject jsonObject) throws ParameterException {
+        Integer id = jsonObject.getInt("id");
+        String passWord = jsonObject.getStr("passWord");
+
+        if (StrUtil.isBlankIfStr(id)||StrUtil.isBlankIfStr(passWord)){
             throw new ParameterException();
         }
-        user.setCreatedTime(null);
-        user.setUserName(null);
-        user.setUpdatedTime(null);
-        user.setStatus(null);
+        UserEntity user = new UserEntity(id, null, passWord, null, null, null);
         ResultCodeEnum codeEnum = ResultCodeEnum.SUCCESS;
         return new Result<>(codeEnum.getResultCode(),codeEnum.getMessage(),userService.upUser(user));
     }
+
+    /**
+     * 停用用户将用户状态改为0
+     * @param jsonObject 统一接受值 id--用户id
+     * @return 统一返回值
+     * @throws ParameterException 参数异常
+     */
     @SaCheckRole("admin")
     @PostMapping("/stopUser")
     public Result<?> stopUser(@RequestBody JSONObject jsonObject) throws ParameterException {
@@ -64,6 +79,13 @@ public class UserController {
         ResultCodeEnum codeEnum = ResultCodeEnum.SUCCESS;
         return new Result<>(codeEnum.getResultCode(),codeEnum.getMessage(),userService.stopUser(id));
     }
+
+    /**
+     * 启用用户
+     * @param jsonObject 统一数据接受 id--用户id
+     * @return 统一返回值
+     * @throws ParameterException 参数异常
+     */
     @SaCheckRole("admin")
     @PostMapping("/startUser")
     public Result<?> startUser(@RequestBody JSONObject jsonObject) throws ParameterException {
@@ -74,6 +96,13 @@ public class UserController {
         ResultCodeEnum codeEnum = ResultCodeEnum.SUCCESS;
         return new Result<>(codeEnum.getResultCode(),codeEnum.getMessage(),userService.stopUser(id));
     }
+
+    /**
+     * 获取用户数据(分页)
+     * @param jsonObject 统一数据接受 current--页数 size--单页数量 name--要查询的关键词(可为空)
+     * @return 统一返回值
+     * @throws ParameterException 参数异常
+     */
     @SaCheckRole("admin")
     @PostMapping("/getUser")
     public Result<?> getUser(@RequestBody JSONObject jsonObject) throws ParameterException {
