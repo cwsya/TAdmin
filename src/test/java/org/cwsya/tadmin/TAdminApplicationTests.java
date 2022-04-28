@@ -30,7 +30,7 @@ class TAdminApplicationTests {
     UserMapper userMapper;
 
     @Test
-    void contextLoads() throws JsonProcessingException {
+    void contextLoads(){
 //        System.out.println(userMapper.selectList(null));
 //        System.out.println(userAllMapper.selectUserAll(new UserEntity(null,"admin","admin",null)));
 //        String s = ObjectMapperUtil.getIntstance().writeValueAsString(userAllMapper.selectUserAll(new UserEntity(null, "admin", "admin", null)));
@@ -43,7 +43,6 @@ class TAdminApplicationTests {
 //        System.out.println(userEntityPage.getRecords());
 //        userMapper.insert(new UserEntity(null,"cws","cws",null,null,null));
         userMapper.insert(new UserEntity(null,"1","1",null,null,null));
-
     }
 
     @Autowired
