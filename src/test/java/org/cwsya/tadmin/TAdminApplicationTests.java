@@ -6,8 +6,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.cwsya.tadmin.mapper.UserAllMapper;
 import org.cwsya.tadmin.mapper.UserMapper;
+import org.cwsya.tadmin.pojo.PO.AccessEntity;
 import org.cwsya.tadmin.pojo.PO.UserAllEntity;
 import org.cwsya.tadmin.pojo.PO.UserEntity;
+import org.cwsya.tadmin.service.AccessService;
+import org.cwsya.tadmin.service.impl.AccessServiceImpl;
 import org.cwsya.tadmin.util.ObjectMapperUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +44,16 @@ class TAdminApplicationTests {
 //        userMapper.insert(new UserEntity(null,"cws","cws",null,null,null));
         userMapper.insert(new UserEntity(null,"1","1",null,null,null));
 
+    }
+
+    @Autowired
+    private AccessService accessService;
+    @Test
+    public void ceshi(){
+//        accessService.addAccess(new AccessEntity(null,"aaa",null,null,null));
+        accessService.stopAccess(6);
+        accessService.startAccess(6);
+        accessService.getAccess(6,1);
     }
 
 

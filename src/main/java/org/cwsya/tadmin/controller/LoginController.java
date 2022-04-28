@@ -29,11 +29,11 @@ import java.util.Map;
 @RestController
 public class LoginController implements Serializable {
 
-    @Autowired
-    private StringRedisTemplate redisTemplate;
+    private final LoginService loginService;
 
-    @Autowired
-    private LoginService loginService;
+    public LoginController(LoginService loginService) {
+        this.loginService = loginService;
+    }
 
     @PostMapping("/login")
     public Result<?> login(@RequestBody JSONObject jsonObject) throws UserErrorException, JsonProcessingException, ParameterException {

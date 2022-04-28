@@ -19,12 +19,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class LoginServiceImpl implements LoginService {
+    public LoginServiceImpl(UserAllMapper userAllMapper, RedisTemplate<String, String> redisTemplate) {
+        this.userAllMapper = userAllMapper;
+        this.redisTemplate = redisTemplate;
+    }
 
-    @Autowired
-    private UserAllMapper userAllMapper;
+    private final UserAllMapper userAllMapper;
 
-    @Autowired
-    private RedisTemplate<String,String> redisTemplate;
+    private final RedisTemplate<String,String> redisTemplate;
     @Override
     public UserAllEntity login(UserEntity user) throws UserErrorException, JsonProcessingException {
         UserAllEntity userAllEntity = userAllMapper.selectUserAll(user);
