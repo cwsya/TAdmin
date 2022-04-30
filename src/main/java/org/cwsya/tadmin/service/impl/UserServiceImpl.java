@@ -2,13 +2,10 @@ package org.cwsya.tadmin.service.impl;
 
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import org.cwsya.tadmin.exception.ParameterException;
 import org.cwsya.tadmin.mapper.UserMapper;
 import org.cwsya.tadmin.pojo.PO.UserEntity;
 import org.cwsya.tadmin.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**

@@ -8,18 +8,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9c6cebe-0e92-490b-b895-e9fea6f4a1fd" name="变更" comment="rbac基本完工">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/RoleAccessController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/RoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/UserRoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/RoleAccessService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/UserRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/RoleAccessServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/UserRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/VO/AccessEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/VO/AccessRoleEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/VO/RoleAccessEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/VO/RoleEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/VO/RoleUserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/VO/UserRoleEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/util/BeanCopyUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/cwsya/tadmin/TAdminApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/cwsya/tadmin/TAdminApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/AccessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/AccessController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/RoleAccessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/RoleAccessController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/UserRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/controller/UserRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/VO/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/pojo/VO/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/AccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/AccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/RoleAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/RoleAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/UserRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/UserRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/AccessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/AccessServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/RoleAccessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/RoleAccessServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/UserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/UserRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/util/ObjectMapperUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cwsya/tadmin/util/ObjectMapperUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +78,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "E:/code/java/idea/TAdmin/src/main/java/org/cwsya/tadmin/mapper",
+    "last_opened_file_path": "E:/code/java/idea/TAdmin/src/main/java/org/cwsya/tadmin/util",
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.449862",
@@ -84,8 +99,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\code\java\idea\TAdmin\src\main\java\org\cwsya\tadmin\mapper" />
-      <recent name="E:\code\java\idea\TAdmin\src\main\java\org\cwsya\tadmin\pojo\PO" />
+      <recent name="E:\code\java\idea\TAdmin\src\main\java\org\cwsya\tadmin\util" />
+      <recent name="E:\code\java\idea\TAdmin\src\main\java\org\cwsya\tadmin\service\impl" />
+      <recent name="E:\code\java\idea\TAdmin\src\main\java\org\cwsya\tadmin\service" />
+      <recent name="E:\code\java\idea\TAdmin\src\main\java\org\cwsya\tadmin\controller" />
+      <recent name="E:\code\java\idea\TAdmin\src\main\java\org\cwsya\tadmin\pojo\VO" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.TAdminApplication">
@@ -149,7 +167,10 @@
       <workItem from="1650888453458" duration="34000" />
       <workItem from="1650888527768" duration="8922000" />
       <workItem from="1650981599710" duration="3413000" />
-      <workItem from="1651022753212" duration="37167000" />
+      <workItem from="1651022753212" duration="39572000" />
+      <workItem from="1651196917170" duration="598000" />
+      <workItem from="1651203087298" duration="6909000" />
+      <workItem from="1651323734272" duration="428000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1650729737231</created>
@@ -200,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651117271659</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="rbac基本完工">
+      <created>1651150632393</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651150632393</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

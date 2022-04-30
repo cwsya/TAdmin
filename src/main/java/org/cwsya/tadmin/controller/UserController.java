@@ -1,5 +1,7 @@
 package org.cwsya.tadmin.controller;
 
+
+
 import cn.dev33.satoken.annotation.SaCheckRole;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
@@ -9,10 +11,14 @@ import org.cwsya.tadmin.pojo.PO.UserEntity;
 import org.cwsya.tadmin.pojo.Result;
 import org.cwsya.tadmin.pojo.ResultCodeEnum;
 import org.cwsya.tadmin.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.cwsya.tadmin.util.BeanCopyUtils;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -119,8 +125,10 @@ public class UserController {
             name=null;
         }
         Page<UserEntity> user = userService.getUser(current, size, name);
+        List<org.cwsya.tadmin.pojo.VO.UserEntity> list = BeanCopyUtils.copyBeanList(user.getRecords(), org.cwsya.tadmin.pojo.VO.UserEntity.class);
+
         Map<String,Object> map=new HashMap<>(2);
-        map.put("user",user.getRecords());
+        map.put("user",list);
         map.put("page",user.getPages());
         ResultCodeEnum codeEnum = ResultCodeEnum.SUCCESS;
         return new Result<>(codeEnum.getResultCode(),codeEnum.getMessage(),map);

@@ -9,7 +9,6 @@ import org.cwsya.tadmin.pojo.PO.UserAllEntity;
 import org.cwsya.tadmin.pojo.PO.UserEntity;
 import org.cwsya.tadmin.service.LoginService;
 import org.cwsya.tadmin.util.ObjectMapperUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,6 @@ package org.cwsya.tadmin.service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.cwsya.tadmin.mapper.RoleMapper;
-import org.cwsya.tadmin.pojo.PO.AccessEntity;
 import org.cwsya.tadmin.pojo.PO.RoleEntity;
 import org.cwsya.tadmin.service.RoleService;
 import org.springframework.stereotype.Service;

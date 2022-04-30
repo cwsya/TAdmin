@@ -1,8 +1,8 @@
 package org.cwsya.tadmin.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.cwsya.tadmin.mapper.RoleAccessMapper;
-import org.cwsya.tadmin.pojo.PO.AccessEntity;
 import org.cwsya.tadmin.pojo.PO.RoleAccessEntity;
 import org.cwsya.tadmin.service.RoleAccessService;
 import org.springframework.stereotype.Service;
@@ -33,9 +33,19 @@ public class RoleAccessServiceImpl implements RoleAccessService {
     }
 
     @Override
-    public Page<RoleAccessEntity> getRoleAccess(Integer current, Integer size) {
+    public Page<RoleAccessEntity> getRoleAccess(Integer current, Integer size,Integer roleid) {
         Page<RoleAccessEntity> page=new Page<>(current,size);
-        roleAccessMapper.selectPage(page,null);
+        LambdaQueryWrapper<RoleAccessEntity> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(RoleAccessEntity::getRid,roleid);
+        roleAccessMapper.selectPage(page, queryWrapper);
+        return page;
+    }
+    @Override
+    public Page<RoleAccessEntity> getAccessRole(Integer current, Integer size,Integer accessid) {
+        Page<RoleAccessEntity> page=new Page<>(current,size);
+        LambdaQueryWrapper<RoleAccessEntity> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(RoleAccessEntity::getAid,accessid);
+        roleAccessMapper.selectPage(page, queryWrapper);
         return page;
     }
 }

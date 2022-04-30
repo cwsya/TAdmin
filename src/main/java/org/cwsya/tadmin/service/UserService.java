@@ -1,5 +1,6 @@
 package org.cwsya.tadmin.service;
 
+
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.cwsya.tadmin.exception.ParameterException;
 import org.cwsya.tadmin.pojo.PO.UserEntity;
@@ -47,7 +48,7 @@ public interface UserService {
      * @return 信息
      *
      */
-    Page<UserEntity> getUser(Integer current,Integer size,String name);
+    Page<UserEntity> getUser(Integer current, Integer size, String name);
 
 
 

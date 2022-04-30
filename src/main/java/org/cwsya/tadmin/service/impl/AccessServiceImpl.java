@@ -3,12 +3,8 @@ package org.cwsya.tadmin.service.impl;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.cwsya.tadmin.mapper.AccessMapper;
 import org.cwsya.tadmin.pojo.PO.AccessEntity;
-import org.cwsya.tadmin.pojo.PO.UserEntity;
 import org.cwsya.tadmin.service.AccessService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.script.ScriptContext;
 
 /**
  * 权限相关操作

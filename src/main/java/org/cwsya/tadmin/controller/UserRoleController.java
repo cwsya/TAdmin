@@ -1,21 +1,24 @@
 package org.cwsya.tadmin.controller;
 
+
 import cn.dev33.satoken.annotation.SaCheckRole;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.cwsya.tadmin.exception.ParameterException;
-import org.cwsya.tadmin.pojo.PO.RoleAccessEntity;
 import org.cwsya.tadmin.pojo.PO.UserRoleEntity;
 import org.cwsya.tadmin.pojo.Result;
 import org.cwsya.tadmin.pojo.ResultCodeEnum;
+import org.cwsya.tadmin.pojo.VO.RoleUserEntity;
 import org.cwsya.tadmin.service.UserRoleService;
+import org.cwsya.tadmin.util.BeanCopyUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -57,15 +60,37 @@ public class UserRoleController {
     public Result<?> getUserRole(@RequestBody JSONObject jsonObject) throws ParameterException {
         Integer current=jsonObject.getInt("current");
         Integer size=jsonObject.getInt("size");
-        if (StrUtil.isBlankIfStr(current)||StrUtil.isBlankIfStr(size)){
+        Integer userid=jsonObject.getInt("userid");
+        if (StrUtil.isBlankIfStr(current)||StrUtil.isBlankIfStr(size)||StrUtil.isBlankIfStr(userid)){
             throw new ParameterException();
         }
-        Page<UserRoleEntity> role = userRoleService.getUserRole(current,size);
+        Page<UserRoleEntity> role = userRoleService.getUserRole(current,size,userid);
+        List<org.cwsya.tadmin.pojo.VO.UserRoleEntity> list = BeanCopyUtils.copyBeanList(role.getRecords(), org.cwsya.tadmin.pojo.VO.UserRoleEntity.class);
+
         Map<String,Object> map=new HashMap<>(size);
-        map.put("userRole",role.getRecords());
+        map.put("userRole",list);
         map.put("page",role.getPages());
         ResultCodeEnum codeEnum = ResultCodeEnum.SUCCESS;
         return new Result<>(codeEnum.getResultCode(),codeEnum.getMessage(),map);
     }
+    @SaCheckRole("admin")
+    @PostMapping("/getRoleUser")
+    public Result<?> getRoleUser(@RequestBody JSONObject jsonObject) throws ParameterException {
+        Integer current=jsonObject.getInt("current");
+        Integer size=jsonObject.getInt("size");
+        Integer roleid=jsonObject.getInt("roleid");
+        if (StrUtil.isBlankIfStr(current)||StrUtil.isBlankIfStr(size)||StrUtil.isBlankIfStr(roleid)){
+            throw new ParameterException();
+        }
+        Page<UserRoleEntity> role = userRoleService.getRoleUser(current,size,roleid);
+        List<RoleUserEntity> list = BeanCopyUtils.copyBeanList(role.getRecords(), RoleUserEntity.class);
+
+        Map<String,Object> map=new HashMap<>(size);
+        map.put("userRole",list);
+        map.put("page",role.getPages());
+        ResultCodeEnum codeEnum = ResultCodeEnum.SUCCESS;
+        return new Result<>(codeEnum.getResultCode(),codeEnum.getMessage(),map);
+    }
+
 
 }

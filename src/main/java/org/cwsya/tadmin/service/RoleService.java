@@ -1,7 +1,6 @@
 package org.cwsya.tadmin.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import org.cwsya.tadmin.pojo.PO.AccessEntity;
 import org.cwsya.tadmin.pojo.PO.RoleEntity;
 
 /**

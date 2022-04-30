@@ -1,50 +1,67 @@
 package org.cwsya.tadmin.pojo.VO;
 
+
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author cws
- * 实体类
+ * 
+ * 
+ * @author 陈文生
  */
-
-public class UserEntity implements Serializable {
+@TableName("access")
+public class AccessEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 唯一标识
+	 * 权限唯一标识
 	 */
-
+	@TableId
 	private Integer id;
 	/**
-	 * 用户名
+	 * 权限名称
 	 */
-	private String userName;
+	private String name;
 	/**
-	 * 用户状态
+	 * 权限状态
 	 */
 	private Integer status;
-
 	/**
 	 * 更新时间
 	 */
-
+	@TableField(fill = FieldFill.INSERT_UPDATE)
 	private Date updatedTime;
 	/**
 	 * 创建时间
 	 */
-
+	@TableField(fill = FieldFill.INSERT)
 	private Date createdTime;
 
 	@Override
 	public String toString() {
-		return "UserEntity{" +
+		return "AccessEntity{" +
 				"id=" + id +
-				", userName='" + userName + '\'' +
+				", name='" + name + '\'' +
 				", status=" + status +
 				", updatedTime=" + updatedTime +
 				", createdTime=" + createdTime +
 				'}';
+	}
+
+	public AccessEntity() {
+	}
+
+	public AccessEntity(Integer id, String name, Integer status, Date updatedTime, Date createdTime) {
+		this.id = id;
+		this.name = name;
+		this.status = status;
+		this.updatedTime = updatedTime;
+		this.createdTime = createdTime;
 	}
 
 	public Integer getId() {
@@ -55,12 +72,12 @@ public class UserEntity implements Serializable {
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Integer getStatus() {
@@ -84,17 +101,6 @@ public class UserEntity implements Serializable {
 	}
 
 	public void setCreatedTime(Date createdTime) {
-		this.createdTime = createdTime;
-	}
-
-	public UserEntity() {
-	}
-
-	public UserEntity(Integer id, String userName, Integer status, Date updatedTime, Date createdTime) {
-		this.id = id;
-		this.userName = userName;
-		this.status = status;
-		this.updatedTime = updatedTime;
 		this.createdTime = createdTime;
 	}
 }

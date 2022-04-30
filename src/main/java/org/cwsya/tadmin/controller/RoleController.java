@@ -1,21 +1,23 @@
 package org.cwsya.tadmin.controller;
 
+
 import cn.dev33.satoken.annotation.SaCheckRole;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.cwsya.tadmin.exception.ParameterException;
-import org.cwsya.tadmin.pojo.PO.AccessEntity;
 import org.cwsya.tadmin.pojo.PO.RoleEntity;
 import org.cwsya.tadmin.pojo.Result;
 import org.cwsya.tadmin.pojo.ResultCodeEnum;
 import org.cwsya.tadmin.service.RoleService;
+import org.cwsya.tadmin.util.BeanCopyUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -69,8 +71,10 @@ public class RoleController {
             throw new ParameterException();
         }
         Page<RoleEntity> role = roleService.getRole(current,size);
+        List<org.cwsya.tadmin.pojo.VO.RoleEntity> list = BeanCopyUtils.copyBeanList(role.getRecords(), org.cwsya.tadmin.pojo.VO.RoleEntity.class);
+
         Map<String,Object> map=new HashMap<>(size);
-        map.put("role",role.getRecords());
+        map.put("role",list);
         map.put("page",role.getPages());
         ResultCodeEnum codeEnum = ResultCodeEnum.SUCCESS;
         return new Result<>(codeEnum.getResultCode(),codeEnum.getMessage(),map);

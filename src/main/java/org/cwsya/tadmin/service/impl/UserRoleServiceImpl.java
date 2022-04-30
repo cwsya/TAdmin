@@ -1,8 +1,8 @@
 package org.cwsya.tadmin.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.cwsya.tadmin.mapper.UserRoleMapper;
-import org.cwsya.tadmin.pojo.PO.RoleAccessEntity;
 import org.cwsya.tadmin.pojo.PO.UserRoleEntity;
 import org.cwsya.tadmin.service.UserRoleService;
 import org.springframework.stereotype.Service;
@@ -33,9 +33,20 @@ public class UserRoleServiceImpl implements UserRoleService {
     }
 
     @Override
-    public Page<UserRoleEntity> getUserRole(Integer current, Integer size) {
+    public Page<UserRoleEntity> getUserRole(Integer current, Integer size,Integer userid) {
         Page<UserRoleEntity> page=new Page<>(current,size);
-        userRoleMapper.selectPage(page,null);
+        LambdaQueryWrapper<UserRoleEntity> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(UserRoleEntity::getUid,userid);
+        userRoleMapper.selectPage(page, queryWrapper);
+        return page;
+    }
+
+    @Override
+    public Page<UserRoleEntity> getRoleUser(Integer current, Integer size, Integer roleid) {
+        Page<UserRoleEntity> page=new Page<>(current,size);
+        LambdaQueryWrapper<UserRoleEntity> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(UserRoleEntity::getRid,roleid);
+        userRoleMapper.selectPage(page, queryWrapper);
         return page;
     }
 }

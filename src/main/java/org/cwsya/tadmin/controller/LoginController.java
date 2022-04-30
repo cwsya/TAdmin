@@ -3,24 +3,22 @@ package org.cwsya.tadmin.controller;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.StrUtil;
+
 import cn.hutool.json.JSONObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.cwsya.tadmin.exception.ParameterException;
 import org.cwsya.tadmin.exception.UserErrorException;
-import org.cwsya.tadmin.pojo.PO.UserAllEntity;
+import org.cwsya.tadmin.pojo.PO.UserEntity;
 import org.cwsya.tadmin.pojo.Result;
 import org.cwsya.tadmin.pojo.ResultCodeEnum;
-import org.cwsya.tadmin.pojo.PO.UserEntity;
 import org.cwsya.tadmin.service.LoginService;
-import org.cwsya.tadmin.util.ObjectMapperUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author cws

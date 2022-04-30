@@ -1,7 +1,6 @@
 package org.cwsya.tadmin.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.stereotype.Component;
 
 /**
  * @author cws

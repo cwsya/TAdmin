@@ -2,6 +2,7 @@ package org.cwsya.tadmin.controller;
 
 import cn.dev33.satoken.annotation.SaCheckRole;
 import cn.hutool.core.util.StrUtil;
+
 import cn.hutool.json.JSONObject;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.cwsya.tadmin.exception.ParameterException;
@@ -9,10 +10,14 @@ import org.cwsya.tadmin.pojo.PO.AccessEntity;
 import org.cwsya.tadmin.pojo.Result;
 import org.cwsya.tadmin.pojo.ResultCodeEnum;
 import org.cwsya.tadmin.service.AccessService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.cwsya.tadmin.util.BeanCopyUtils;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -68,8 +73,10 @@ public class AccessController {
             throw new ParameterException();
         }
         Page<AccessEntity> access = accessService.getAccess(current,size);
-        Map<String,Object> map=new HashMap<>(size);
-        map.put("access",access.getRecords());
+        List<org.cwsya.tadmin.pojo.VO.AccessEntity> list = BeanCopyUtils.copyBeanList(access.getRecords(), org.cwsya.tadmin.pojo.VO.AccessEntity.class);
+
+        Map<String,Object> map=new HashMap<>(2);
+        map.put("access",list);
         map.put("page",access.getPages());
         ResultCodeEnum codeEnum = ResultCodeEnum.SUCCESS;
         return new Result<>(codeEnum.getResultCode(),codeEnum.getMessage(),map);

@@ -1,7 +1,6 @@
 package org.cwsya.tadmin.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import org.cwsya.tadmin.pojo.PO.RoleAccessEntity;
 import org.cwsya.tadmin.pojo.PO.UserRoleEntity;
 
 /**
@@ -27,7 +26,17 @@ public interface UserRoleService {
      * 查对应表
      * @param current 页数
      * @param size 数量
+     * @param userid 用户id
      * @return 信息
      */
-    Page<UserRoleEntity> getUserRole(Integer current, Integer size);
+    Page<UserRoleEntity> getUserRole(Integer current, Integer size,Integer userid);
+
+    /**
+     * 查对应表
+     * @param current 页数
+     * @param size 数量
+     * @param roleid 角色id
+     * @return 信息
+     */
+    Page<UserRoleEntity> getRoleUser(Integer current, Integer size,Integer roleid);
 }
